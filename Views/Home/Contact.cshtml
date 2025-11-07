@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Contact Page";
+}
+
+<div class="text-center py-5">
+    <h1 class="contact-title">Contact me:</h1>
+
+    <ul class="contact-list">
+        <li><button>📞 Phone</button></li>
+        <li><button>📸 Instagram</button></li>
+        <li><button>💼 LinkedIn</button></li>
+        <li><button>✉️ Email</button></li>
+    </ul>
+</div>
+
+<style>
+    .contact-list {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    
+    .contact-title {
+        color: red;
+        border: 2px solid gold;
+        display: inline-block;
+        padding: 12px 28px;
+        border-radius: 12px;
+        background-color: rgba(255, 215, 0, 0.15);
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.6), 0 0 30px rgba(255, 215, 0, 0.3);
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+        .contact-list li {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .contact-list button {
+            width: 100%;
+            background-color: blueviolet;
+            color: gold;
+            border: solid;
+            padding: 12px 20px;
+            font-size: 18px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+            .contact-list button:hover {
+                background-color: #005a9e;
+                transform: translateY(-3px);
+                box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+            }
+
+    /* responsividade */
+    @@media (max-width: 600px) {
+        .contact-list button {
+            font-size: 16px;
+            padding: 10px 14px;
+        }
+    }
+</style>

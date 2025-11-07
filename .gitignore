@@ -1,0 +1,77 @@
+## Visual Studio / .NET / ASP.NET Core .gitignore
+
+# Build results
+bin/
+obj/
+out/
+Debug/
+Release/
+x64/
+x86/
+
+# Visual Studio cache and settings
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# IIS Express
+.vspscc
+*.vsidx
+*.vsp
+*.vspx
+*.vsmdi
+*.psess
+*.vspf
+*.vspx
+*.vsmdi
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.tlog
+*.vspscc
+*.pidb
+*.userprefs
+*.dbmdl
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+*.nuget.props
+*.nuget.targets
+
+# Entity Framework
+App_Data/
+*.mdf
+*.ldf
+
+# Configuration files with secrets
+appsettings.Development.json
+secrets.json
+
+# Publish outputs
+publish/
+dist/
+build/
+*.Publish.xml
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# Misc
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Node.js (if you use npm for front-end)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

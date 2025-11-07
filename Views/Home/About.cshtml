@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "About Page";
+
+}
+<div class="text-center py-5">
+    <h1 class="contact-title">About me:</h1>
+   <ul class="standart_font">
+       <li>
+           Meu nome e Anselmo tenho xx anos sou...
+       </li>
+       <li>
+            Trabalho em vários projetos...
+       </li>
+       <li>
+           Eu possuo esses cursos em... estou cursando também
+       </li>
+   </ul>
+</div>
+<style>
+    .contact-title {
+        color: red;
+        border: 2px solid gold;
+        display: inline-block;
+        padding: 12px 28px;
+        border-radius: 12px;
+        background-color: rgba(255, 215, 0, 0.15);
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.6), 0 0 30px rgba(255, 215, 0, 0.3);
+        font-weight: bold;
+        letter-spacing: 1px;
+
+    }
+    /* responsividade */
+    @@media (max-width: 600px) {
+        .contact-list button {
+            font-size: 16px;
+            padding: 10px 14px;
+        }
+    }
+     .standart_font{
+     font-size: 20px;
+     color: aliceblue;
+     border: 2px solid white;
+     text-shadow: 1.2px 1.2px red;
+     display: inline-block;
+     font-weight: bold;
+     }
+    .contact-list li {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 300px;
+    }
+</style>
