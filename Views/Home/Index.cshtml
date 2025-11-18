@@ -2,8 +2,72 @@
     ViewData["Title"] = "Home Page";
 }
 
-
-<div class="text-center">
-    <h1 class="display-4">Anselmo</h1>
-    <p>Enter here and discover more about me!!!</p>
+<div class="home-wrapper">
+    <div class="home-card">
+        <h1 class="home-title">Anselmo</h1>
+        <p class="home-text">Enter here and discover more about me!!!</p>
+    </div>
 </div>
+
+<style>
+
+    /* Wrapper central */
+    .home-wrapper {
+        display: flex;
+        justify-content: center;
+        padding: 60px 15px;
+        text-align: center;
+    }
+
+    /* Card principal */
+    .home-card {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 40px 30px;
+        max-width: 900px;
+        width: 100%;
+        border-radius: 20px;
+        border: 2px solid #003a6b;
+        box-shadow: 0 0 15px rgba(0, 170, 255, 0.25);
+        backdrop-filter: blur(3px);
+    }
+
+    /* Título neon */
+    .home-title {
+        background-color: #001a33;
+        color: #00eaff;
+        padding: 15px 30px;
+        font-size: 3rem;
+        font-weight: bold;
+        border: 2px solid #0077cc;
+        border-radius: 10px;
+        text-shadow: 0 0 5px #00eaff, 0 0 10px #00eaff, 0 0 20px #00eaff, 0 0 40px #0099ff;
+        box-shadow: 0 0 10px #005e99, inset 0 0 10px #003a6b;
+        margin-bottom: 25px;
+    }
+
+    /* Texto */
+    .home-text {
+        color: #333;
+        font-size: 1.4rem;
+        font-weight: 500;
+        margin-top: 20px;
+        line-height: 1.7;
+    }
+
+    /* Responsividade */
+    @@media (max-width: 600px) {
+        .home-title {
+            font-size: 2.2rem;
+            padding: 10px 20px;
+        }
+
+        .home-text {
+            font-size: 1.2rem;
+        }
+
+        .home-card {
+            padding: 30px 18px;
+        }
+    }
+
+</style>

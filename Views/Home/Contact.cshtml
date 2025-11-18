@@ -2,14 +2,14 @@
     ViewData["Title"] = "Contact Page";
 }
 
-<div class="text-center py-5">
-    <h1 class="contact-title">Contact me:</h1>
+<div class="neon-title-contact">
+    <h1 class="contact-title-pro">Contact me:</h1>
 
     <ul class="contact-list">
-        <li><button>📞 Phone</button></li>
-        <li><button>📸 Instagram</button></li>
-        <li><button>💼 LinkedIn</button></li>
-        <li><button>✉️ Email</button></li>
+        <li><button type="button" class="btn-contact">📞 Phone</button></li>
+        <li><button type="button" class="btn-contact btn-instagram">📸 Instagram</button></li>
+        <li><button type="button" class="btn-contact btn-linkedin">💼 LinkedIn</button></li>
+        <li><button type="button" class="btn-contact btn-email">✉️ Email</button></li>
     </ul>
 </div>
 
@@ -24,49 +24,158 @@
         gap: 15px;
     }
 
-    
     .contact-title {
-        color: red;
-        border: 2px solid gold;
+        color: #0A2342; /* azul profundo */
+        font-weight: 700;
+        font-size: 2rem;
+        letter-spacing: 1.5px;
+        padding: 14px 32px;
         display: inline-block;
-        padding: 12px 28px;
-        border-radius: 12px;
-        background-color: rgba(255, 215, 0, 0.15);
-        box-shadow: 0 0 15px rgba(255, 215, 0, 0.6), 0 0 30px rgba(255, 215, 0, 0.3);
-        font-weight: bold;
-        letter-spacing: 1px;
+        /* Fundo e borda */
+        background: rgba(0, 231, 255, 0.08);
+        border: 3px solid #00E7FF;
+        border-radius: 10px;
+        /* Efeito neon */
+        box-shadow: 0 0 8px rgba(0, 231, 255, 0.5), 0 0 20px rgba(0, 231, 255, 0.3);
+        /* Faz o neon pulsar */
+        animation: pulseNeon 3s infinite ease-in-out;
+        position: relative;
     }
-        .contact-list li {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            max-width: 300px;
+
+    /* 🔷 1. NEON PULSANTE */
+    @@keyframes pulseNeon {
+        0%
+
+    {
+        box-shadow: 0 0 8px rgba(0, 231, 255, 0.4), 0 0 20px rgba(0, 231, 255, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 12px rgba(0, 231, 255, 0.8), 0 0 28px rgba(0, 231, 255, 0.5);
+    }
+
+    100% {
+        box-shadow: 0 0 8px rgba(0, 231, 255, 0.4), 0 0 20px rgba(0, 231, 255, 0.2);
+    }
+
+    }
+
+    /* 🔷 2. CANTOS ESTILO PLACA DE CIRCUITO */
+    .contact-title::before,
+    .contact-title::after {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border: 3px solid #00E7FF;
+    }
+
+    .contact-title::before {
+        top: -6px;
+        left: -6px;
+        border-right: none;
+        border-bottom: none;
+    }
+
+    .contact-title::after {
+        bottom: -6px;
+        right: -6px;
+        border-left: none;
+        border-top: none;
+    }
+
+    /* 🔷 3. LINHA DE CIRCUITO ANIMADA */
+    .contact-title::after,
+    .contact-title::before {
+        animation: drawCircuit 2.5s ease forwards;
+    }
+
+    @@keyframes drawCircuit {
+        0%
+
+    {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    }
+
+
+
+    .contact-list li {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* Estilo base para todos os botões de contato */
+    .contact-list .btn-contact {
+        width: 100%;
+        background-color: blueviolet;
+        color: #000; /* podemos trocar para branco dependendo do contraste */
+        border: 1px solid rgba(0,0,0,0.08);
+        padding: 12px 20px;
+        font-size: 28px;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+        .contact-list .btn-contact:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
         }
 
-        .contact-list button {
-            width: 100%;
-            background-color: blueviolet;
-            color: gold;
-            border: solid;
-            padding: 12px 20px;
-            font-size: 18px;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* === Sobrescritas específicas (devem vir DEPOIS da regra base) === */
+
+    /* Botão Instagram */
+    .contact-list .btn-instagram {
+        background-color: #b82a6e;
+        color: #fff; /* texto branco pra contraste */
+        border-color: #9e235b;
+    }
+
+        .contact-list .btn-instagram:hover {
+            background-color: #9e235b;
         }
 
-            .contact-list button:hover {
-                background-color: #005a9e;
-                transform: translateY(-3px);
-                box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
-            }
+    /* Botão LinkedIn */
+    .contact-list .btn-linkedin {
+        background-color: #0077b5;
+        color: #fff;
+        border-color: #006699;
+    }
+
+        .contact-list .btn-linkedin:hover {
+            background-color: #006699;
+        }
+
+    /* Botão Email */
+    .contact-list .btn-email {
+        background-color: #2e8b57;
+        color: #fff;
+        border-color: #1f6f44;
+    }
+
+        .contact-list .btn-email:hover {
+            background-color: #1f6f44;
+        }
 
     /* responsividade */
     @@media (max-width: 600px) {
-        .contact-list button {
-            font-size: 16px;
-            padding: 10px 14px;
-        }
+        .contact-list .btn-contact
+
+    {
+        font-size: 18px;
+        padding: 10px 14px;
+    }
+
     }
 </style>
