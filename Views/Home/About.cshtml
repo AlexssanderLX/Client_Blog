@@ -1,86 +1,328 @@
 ﻿@{
-    ViewData["Title"] = "About Page";
+    Layout = null;
 }
-
-<div class="about-wrapper">
-    <div class="about-card">
-        <h1 class="neon-title">About Me</h1>
-
-        <div class="about-section">
-            <p>
-                I’m a professional specialized in delivering high-quality projects with precision
-                and excellence. Here you’ll find more about my journey, vision, and what drives
-                my work forward.
-            </p>
-        </div>
-    </div>
-</div>
-
-<style>
-    /* Wrapper central */
-    .about-wrapper {
-        display: flex;
-        justify-content: center;
-        padding: 40px 15px;
-    }
-
-    /* CARD PRINCIPAL */
-    .about-card {
-        background: rgba(255, 255, 255, 0.9);
-        padding: 40px 30px;
-        max-width: 950px;
-        width: 100%;
-        border-radius: 20px;
-        border: 2px solid #003a6b;
-        box-shadow: 0 0 15px rgba(0, 170, 255, 0.25);
-        backdrop-filter: blur(3px);
-    }
-
-    /* Título neon */
-    .neon-title {
-        background-color: #001a33;
-        color: #00eaff;
-        padding: 15px 25px;
-        text-align: center;
-        font-size: 2.7rem;
-        font-weight: bold;
-        border: 2px solid #0077cc;
-        border-radius: 10px;
-        margin-bottom: 25px;
-        /* Efeito neon */
-        text-shadow: 0 0 5px #00eaff, 0 0 10px #00eaff, 0 0 20px #00eaff, 0 0 40px #0088cc;
-        box-shadow: 0 0 10px #005e99, inset 0 0 10px #003a6b;
-    }
-
-    /* SEÇÃO INTERNA */
-    .about-section {
-        background: #ffffff;
-        border: 1px solid #cfd6e1;
-        border-radius: 12px;
-        padding: 25px;
-        margin-top: 20px;
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
-    }
-
-        .about-section p {
-            font-size: 1.25rem;
-            color: #333;
-            line-height: 1.8;
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Landing – Engenharia de Materiais</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-    /* RESPONSIVIDADE */
-    @@media (max-width: 600px) {
-        .neon-title {
-            font-size: 2rem;
-            padding: 10px 15px;
+        body {
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            background: #f2efea;
+            color: #3c312c;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
-        .about-section p {
+        img {
+            width: 100%;
+            display: block;
+            border-radius: inherit;
+        }
+
+        h1, h2, h3 {
+            color: #2d241f;
+            line-height: 1.2;
+        }
+
+        p {
+            color: #5a4e45;
+        }
+
+        .hero-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            padding: 4rem 2rem 2rem;
+            background: linear-gradient(135deg, #6b4c3b, #3f2b24);
+            color: #fdfbf9;
+            border-radius: 2rem;
+            margin: 2rem auto;
+            max-width: 1200px;
+            box-shadow: 0 25px 50px rgba(30, 20, 15, 0.4);
+        }
+
+        .hero-content h1 {
+            font-size: 2.7rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
             font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #eaded5;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+            .hero-visual img {
+                border-radius: 1.8rem;
+                box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+            }
+
+        .hero-card {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 85%;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.9);
+            color: #2d241f;
+            border-radius: 1.2rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+        }
+
+        .primary-btn, .secondary-btn {
+            border-radius: 999px;
+            padding: 0.85rem 1.8rem;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .primary-btn {
+            background: #f4f1ed;
+            color: #4a403a;
+            box-shadow: 0 15px 30px rgba(76, 57, 44, 0.25);
+        }
+
+        .secondary-btn {
+            background: transparent;
+            border: 1px solid #f4f1ed;
+            color: #f4f1ed;
+        }
+
+            .primary-btn:hover, .secondary-btn:hover {
+                transform: translateY(-3px);
+            }
+
+        .about-panel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            padding: 0 2rem;
         }
 
         .about-card {
-            padding: 25px 15px;
+            background: #fdfbf9;
+            border-radius: 1.8rem;
+            padding: 2.5rem;
+            box-shadow: 0 20px 45px rgba(60, 45, 35, 0.18);
         }
-    }
-</style>
+
+            .about-card ul {
+                list-style: none;
+                margin-top: 1.5rem;
+                display: grid;
+                gap: 0.8rem;
+            }
+
+            .about-card li {
+                background: #6b4c3b;
+                color: #fdfbf9;
+                padding: 0.9rem 1rem;
+                border-radius: 1rem;
+                font-weight: 600;
+                text-align: center;
+                box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+            }
+
+        .contact-panel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 3rem;
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            background: #f4f1ed;
+            border-radius: 2rem;
+            box-shadow: 0 30px 65px rgba(42, 30, 21, 0.3);
+        }
+
+            .contact-panel h2 {
+                margin-bottom: 0.8rem;
+            }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+            .contact-form input,
+            .contact-form textarea {
+                border-radius: 1rem;
+                border: 1px solid #d4c9bf;
+                padding: 0.9rem 1rem;
+                font-size: 1rem;
+            }
+
+                .contact-form input:focus,
+                .contact-form textarea:focus {
+                    outline: 2px solid #b78a5d;
+                }
+
+        .full-width {
+            width: 100%;
+        }
+
+        .site-footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: #2d241f;
+            color: #d1c6bb;
+            font-size: 0.9rem;
+        }
+
+        @@media (max-width: 700px) {
+            .hero-section {
+                padding: 3rem 1.5rem 2rem;
+            }
+
+            .hero-card {
+                position: static;
+                margin-top: 1rem;
+            }
+
+            .contact-panel {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <span style="letter-spacing:0.3em;font-size:.9rem;">ENGENHARIA DE MATERIAIS</span>
+                <h1>Materializando confiança em cada projeto</h1>
+                <p>Integro pesquisa, laboratório e campo para entregar soluções estéticas, duráveis e sustentáveis.</p>
+                <div class="hero-actions">
+                    <a class="primary-btn" href="#portfolio">Ver portfólio</a>
+                    <a class="secondary-btn" href="#contato">Contato</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=80" alt="Materiais tecnológicos" />
+                <div class="hero-card">
+                    <h3>Resultados mediados por dados.</h3>
+                    <p>Ensaios físicos, durabilidade e consultoria técnica para obras inteligentes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-panel">
+            <div class="about-card">
+                <h2>Sobre mim</h2>
+                <p>Atuo na interface entre análise laboratorial e execução de campo, traduzindo normas técnicas em soluções práticas para infraestrutura e produtos inovadores.</p>
+                <ul>
+                    <li>Ensaios mecânicos e térmicos</li>
+                    <li>Consultoria em especificação de materiais</li>
+                    <li>Documentação técnica ilustrada</li>
+                </ul>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=80" alt="Laboratório moderno" />
+            </div>
+        </section>
+
+        <section class="contact-panel" id="contato">
+            <div class="contact-content">
+                <h2>Vamos construir juntos?</h2>
+                <p>Envie um briefing, dúvida ou proposta de parceria. Retorno em até 48h.</p>
+                <p><strong>Email:</strong> contato@@engenhariamateriais.com</p>
+                <p><strong>LinkedIn:</strong> linkedin.com/in/engenheiro-materiais</p>
+            </div>
+            <form class="contact-form" method="post">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" rows="4" placeholder="Descreva o projeto" required></textarea>
+                <button type="submit" class="primary-btn full-width">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        © 2024 – Estudante de Engenharia de Materiais. Imagens via Unsplash.
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const smoothLinks = document.querySelectorAll('a[href^="#"]');
+
+          smoothLinks.forEach(link => {
+            link.addEventListener('click', event => {
+              event.preventDefault();
+              const targetId = link.getAttribute('href').slice(1);
+              const targetElement = document.getElementById(targetId);
+              if (!targetElement) return;
+
+              window.scrollTo({
+                top: targetElement.offsetTop - 70,
+                behavior: 'smooth'
+              });
+            });
+          });
+
+          const contactForm = document.querySelector('.contact-form');
+          if (contactForm) {
+            contactForm.addEventListener('submit', event => {
+              event.preventDefault();
+              const nome = contactForm.querySelector('#nome');
+              const email = contactForm.querySelector('#email');
+              const mensagem = contactForm.querySelector('#mensagem');
+
+              if (!nome.value.trim() || nome.value.trim().length < 3) {
+                alert('Informe um nome válido com ao menos 3 caracteres.');
+                nome.focus();
+                return;
+              }
+
+              const emailRegex = /^[^\\s@@]+@@[^\\s@@]+\\.[^\\s@@]+$/;
+              if (!emailRegex.test(email.value)) {
+                alert('Informe um e-mail válido.');
+                email.focus();
+                return;
+              }
+
+              if (!mensagem.value.trim() || mensagem.value.trim().length < 10) {
+                alert('Informe uma mensagem com pelo menos 10 caracteres.');
+                mensagem.focus();
+                return;
+              }
+
+              alert('Mensagem enviada com sucesso! Responderemos em breve.');
+              contactForm.reset();
+            });
+          }
+        });
+    </script>
+</body>
+</html>

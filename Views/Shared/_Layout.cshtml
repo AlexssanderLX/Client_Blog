@@ -1,63 +1,129 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ClientBlog</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/ClientBlog.styles.css" asp-append-version="true" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - Engenharia de Materiais</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            background: #f2efea;
+            color: #3c312c;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 9, 6, 0.9);
+            backdrop-filter: blur(12px);
+            z-index: 20;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            gap: 1rem;
+        }
+
+        .brand {
+            font-size: 1.1rem;
+            letter-spacing: 0.35em;
+            color: #fdfbf9;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+            .nav-links a {
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                font-size: 0.75rem;
+                color: #fdfbf9;
+                text-decoration: none;
+                padding: 0.45rem 1rem;
+                border-radius: 999px;
+                transition: transform 0.2s ease, background 0.2s ease;
+            }
+
+                .nav-links a:hover {
+                    transform: translateY(-1px);
+                    background: rgba(255, 255, 255, 0.1);
+                }
+
+        .cta-link {
+            border: 1px solid #fdfbf9;
+        }
+
+        main {
+            flex: 1;
+            padding-top: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: #2d241f;
+            color: #d1c6bb;
+            font-size: 0.9rem;
+        }
+
+        @@media (max-width: 900px) {
+            .header-inner {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light header-wood border-bottom box-shadow mb-3 custom-divider">
-            <div class="container-fluid">
-                <a class="navbar-brand text-light brand-electric" asp-area="" asp-controller="Home" asp-action="Index">
-                    ⚡ ClientBlog
-                </a>
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-
-                        <li class="nav-item">
-                            <a class="nav-link text-light electric-link" asp-area="" asp-controller="Home" asp-action="About">
-                                About
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-light electric-link" asp-area="" asp-controller="Home" asp-action="Contact">
-                                Contact
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <div class="header-inner">
+            <div class="brand">ENGENHARIA DE MATERIAIS</div>
+            <nav class="nav-links">
+                <a href="#portfolio">Portfólio</a>
+                <a href="#about">Sobre</a>
+                <a href="#contato" class="cta-link">Contato</a>
+            </nav>
+        </div>
     </header>
 
+    <main>
+        @RenderBody()
+    </main>
 
-
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - ClientBlog - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+    <footer>
+        © 2024 – Estudante de Engenharia de Materiais. Imagens via Unsplash.
     </footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
