@@ -44,6 +44,23 @@ namespace ClientBlog.Services
             },
             new ProjectItem
             {
+                Name = "Pórtico Arquitetura",
+                Slug = "portico-arquitetura",
+                Rank = "Architecture studio",
+                Summary = "Editorial architecture studio - oversized type, image gallery and pinned horizontal scroll",
+                Description = "Pórtico is a fictional architecture and territory studio landing page built as an editorial, monochrome experience. Oversized typography, a single clay accent and GSAP-driven motion (masked reveals, parallax and a pinned horizontal strip) frame a large architecture image gallery, fully responsive from 320px up.",
+                PreviewImagePath = "~/img/ProjectScreens/portico-preview.png",
+                PreviewImageAlt = "Pórtico Arquitetura homepage preview",
+                Tags = new() { "Next.js", "TypeScript", "GSAP", "Lenis", "Architecture" },
+                GitHubUrl = "https://github.com/AlexssanderLX/portico-arquitetura",
+                ProjectUrl = "https://portico-arquitetura.vercel.app",
+                IsFeatured = false,
+                ContentConfirmed = true,
+                Status = "active",
+                Order = 11
+            },
+            new ProjectItem
+            {
                 Name = "Aura Perfumaria",
                 Slug = "aura-perfumaria",
                 Rank = "Luxury e-commerce",
