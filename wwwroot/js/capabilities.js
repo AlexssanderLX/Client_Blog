@@ -1,6 +1,7 @@
 (function () {
     const root = document.documentElement;
     const startedAt = performance.now();
+    const forceBoot = root.dataset.forceBoot === "true";
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const coarsePointer = window.matchMedia("(pointer: coarse)").matches;
     const compactViewport = window.matchMedia("(max-width: 760px)").matches;
@@ -37,7 +38,8 @@
     root.dataset.bootState = "booting";
 
     const markReady = () => {
-        const minimumBootTime = effectsBudget === "full" ? 720 : 460;
+        const standardBootTime = effectsBudget === "full" ? 720 : 460;
+        const minimumBootTime = forceBoot ? Math.max(standardBootTime, 1100) : standardBootTime;
         const elapsed = performance.now() - startedAt;
         const wait = Math.max(minimumBootTime - elapsed, 0);
 

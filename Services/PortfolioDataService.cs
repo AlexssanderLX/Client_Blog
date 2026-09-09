@@ -27,6 +27,74 @@ namespace ClientBlog.Services
             },
             new ProjectItem
             {
+                Name = "Vero Fintech",
+                Slug = "vero-fintech",
+                Rank = "Fintech experience",
+                Summary = "Editorial fintech experience - digital account, investments and conceptual dashboard",
+                Description = "Vero is a fictional fintech experience that combines an editorial landing page with a conceptual dashboard, a 3D coin and scroll-driven storytelling designed to make financial products feel clear and tangible.",
+                PreviewImagePath = "~/img/ProjectScreens/vero-preview.png",
+                PreviewImageAlt = "Vero Fintech homepage preview",
+                Tags = new() { "Next.js", "TypeScript", "React Three Fiber", "GSAP", "Fintech" },
+                GitHubUrl = "https://github.com/AlexssanderLX/vero-fintech",
+                ProjectUrl = "https://vero-fintech.vercel.app",
+                IsFeatured = false,
+                ContentConfirmed = true,
+                Status = "active",
+                Order = 2
+            },
+            new ProjectItem
+            {
+                Name = "Aura Perfumaria",
+                Slug = "aura-perfumaria",
+                Rank = "Luxury e-commerce",
+                Summary = "Premium fragrance store - immersive product storytelling and functional shopping bag",
+                Description = "Aura is a fictional premium fragrance store built as an immersive brand experience. Procedural 3D product work, cinematic scroll choreography and a functional shopping bag connect visual direction with a practical commerce flow.",
+                PreviewImagePath = "~/img/ProjectScreens/aura-preview.png",
+                PreviewImageAlt = "Aura Perfumaria homepage preview",
+                Tags = new() { "Next.js", "TypeScript", "React Three Fiber", "E-commerce", "GSAP" },
+                GitHubUrl = "https://github.com/AlexssanderLX/aura-perfumaria",
+                ProjectUrl = "https://aura-perfumaria-murex.vercel.app",
+                IsFeatured = false,
+                ContentConfirmed = true,
+                Status = "active",
+                Order = 3
+            },
+            new ProjectItem
+            {
+                Name = "Kinetika Academia",
+                Slug = "kinetika-academia",
+                Rank = "Performance studio",
+                Summary = "High-performance studio - biomechanics, training programs and cinematic motion",
+                Description = "Kinetika is a fictional high-performance and biomechanics studio landing page. It uses cinematic motion, pinned horizontal storytelling and progressive scroll effects to communicate method, intensity and measurable evolution.",
+                PreviewImagePath = "~/img/ProjectScreens/kinetika-preview.png",
+                PreviewImageAlt = "Kinetika Academia homepage preview",
+                Tags = new() { "Next.js", "TypeScript", "GSAP", "Biomechanics", "Motion design" },
+                GitHubUrl = "https://github.com/AlexssanderLX/kinetika-academia",
+                ProjectUrl = "https://kinetika-academia.vercel.app",
+                IsFeatured = false,
+                ContentConfirmed = true,
+                Status = "active",
+                Order = 4
+            },
+            new ProjectItem
+            {
+                Name = "Amaral & Prado Advocacia",
+                Slug = "amaral-prado-advocacia",
+                Rank = "Legal experience",
+                Summary = "Business law firm - editorial positioning, expertise and contact journey",
+                Description = "Amaral & Prado is a fictional premium business law firm landing page. Its editorial visual system, animated seal and restrained motion create a credible path from institutional positioning to areas of expertise and contact.",
+                PreviewImagePath = "~/img/ProjectScreens/amaral-prado-preview.png",
+                PreviewImageAlt = "Amaral and Prado Advocacia homepage preview",
+                Tags = new() { "Next.js", "TypeScript", "Framer Motion", "Legal", "Editorial design" },
+                GitHubUrl = "https://github.com/AlexssanderLX/amaral-prado-advocacia",
+                ProjectUrl = "https://amaral-prado-advocacia.vercel.app",
+                IsFeatured = false,
+                ContentConfirmed = true,
+                Status = "active",
+                Order = 5
+            },
+            new ProjectItem
+            {
                 Name = "LedgerFlow",
                 Slug = "ledgerflow",
                 Rank = "Business workflow",
@@ -39,7 +107,7 @@ namespace ClientBlog.Services
                 IsFeatured = false,
                 ContentConfirmed = true,
                 Status = "active",
-                Order = 3
+                Order = 7
             },
             new ProjectItem
             {
@@ -55,7 +123,7 @@ namespace ClientBlog.Services
                 IsFeatured = false,
                 ContentConfirmed = true,
                 Status = "active",
-                Order = 5
+                Order = 9
             },
             new ProjectItem
             {
@@ -73,7 +141,7 @@ namespace ClientBlog.Services
                 IsFeatured = false,
                 ContentConfirmed = true,
                 Status = "active",
-                Order = 4
+                Order = 8
             },
             new ProjectItem
             {
@@ -89,7 +157,7 @@ namespace ClientBlog.Services
                 IsFeatured = false,
                 ContentConfirmed = true,
                 Status = "active",
-                Order = 10
+                Order = 14
             },
             new ProjectItem
             {
@@ -108,7 +176,7 @@ namespace ClientBlog.Services
                 IsFeatured = false,
                 ContentConfirmed = true,
                 Status = "active",
-                Order = 8
+                Order = 12
             },
             new ProjectItem
             {
@@ -126,7 +194,7 @@ namespace ClientBlog.Services
                 IsFeatured = false,
                 ContentConfirmed = true,
                 Status = "active",
-                Order = 2
+                Order = 6
             },
             new ProjectItem
             {
@@ -144,7 +212,7 @@ namespace ClientBlog.Services
                 IsFeatured = false,
                 ContentConfirmed = true,
                 Status = "active",
-                Order = 6
+                Order = 10
             },
             new ProjectItem
             {
@@ -162,7 +230,7 @@ namespace ClientBlog.Services
                 IsFeatured = false,
                 ContentConfirmed = true,
                 Status = "active",
-                Order = 9
+                Order = 13
             }
         };
 

@@ -25,6 +25,7 @@ namespace ClientBlog.Controllers
         {
             ViewData["Title"] = "Development";
             ViewData["Description"] = "Web products, SaaS platforms, automation and applied infrastructure. From interface to server, development with security built in.";
+            ViewData["ForceBoot"] = true;
             var projects = PortfolioDataService.GetDevelopmentProjects();
             return View(projects);
         }
